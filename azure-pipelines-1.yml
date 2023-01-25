@@ -29,9 +29,8 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+- task: DownloadBuildArtifacts@1
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-- task: PublishBuildArtifacts@1
+    buildType: 'current'
+    downloadType: 'single'
+    downloadPath: '$(System.DefaultWorkingDirectory)'
