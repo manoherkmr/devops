@@ -29,8 +29,6 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: DownloadBuildArtifacts@1
+- task: PublishBuildArtifacts@1
   inputs:
-    buildType: 'current'
-    downloadType: 'single'
-    downloadPath: '$(System.DefaultWorkingDirectory)'
+     PathtoPublish: '$(System.DefaultWorkingDirectory)'
